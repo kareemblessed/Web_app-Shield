@@ -1,0 +1,104 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <h1 class="hero-title">Stop Invoice Fraud in Real-Time</h1>
+        <p class="hero-subtitle">
+            Verify vendor voice authenticity in 300ms. Protect your business from 
+            $2.4 billion daily email redirect fraud with military-grade voice verification.
+        </p>
+        
+        <div class="hero-stats">
+            <div class="stat-item slide-in-left">
+                <span class="stat-number">$2.4B</span>
+                <span class="stat-label">Prevents Daily to Fraud</span>
+            </div>
+            <div class="stat-item fade-in" style="animation-delay: 0.2s">
+                <span class="stat-number">300ms</span>
+                <span class="stat-label">Voice Verification</span>
+            </div>
+            <div class="stat-item slide-in-right">
+                <span class="stat-number">99.5%</span>
+                <span class="stat-label">Fraud Detection</span>
+            </div>
+        </div>
+
+        <a href="/dashboard" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
+            <i class="fas fa-rocket"></i>
+            Start Protecting Your Business
+        </a>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="features-grid">
+        <div class="feature-card fade-in" style="animation-delay: 0.1s">
+            <div class="feature-icon">
+                <i class="fas fa-microphone"></i>
+            </div>
+            <h3 class="feature-title">Real-Time Voice Verification</h3>
+            <p class="feature-desc">
+                AssemblyAI Universal-Streaming processes voice in 300ms. 
+                Impossible to fake in real-time.
+            </p>
+        </div>
+
+        <div class="feature-card fade-in" style="animation-delay: 0.2s">
+            <div class="feature-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h3 class="feature-title">Zero Data Exposure</h3>
+            <p class="feature-desc">
+                We never see your invoice contents, amounts, or details. 
+                Complete privacy protection.
+            </p>
+        </div>
+
+        <div class="feature-card fade-in" style="animation-delay: 0.3s">
+            <div class="feature-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="feature-title">Gmail Integration</h3>
+            <p class="feature-desc">
+                Works seamlessly with your existing Gmail workflow. 
+                No new software to learn.
+            </p>
+        </div>
+
+        <div class="feature-card fade-in" style="animation-delay: 0.4s">
+            <div class="feature-icon">
+                <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="feature-title">Cryptographic Badges</h3>
+            <p class="feature-desc">
+                RSA-signed JWT badges provide permanent, verifiable 
+                proof of voice authentication.
+            </p>
+        </div>
+
+        <div class="feature-card fade-in" style="animation-delay: 0.5s">
+            <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="feature-title">Mobile Friendly</h3>
+            <p class="feature-desc">
+                Vendors can verify from any device. 
+                Works perfectly on smartphones and tablets.
+            </p>
+        </div>
+
+        <div class="feature-card fade-in" style="animation-delay: 0.6s">
+            <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="feature-title">Enterprise Scale</h3>
+            <p class="feature-desc">
+                Handles thousands of verifications per minute. 
+                Built for Fortune 500 companies.
+            </p>
+        </div>
+    </section>
+</div>
+{% endblock %}

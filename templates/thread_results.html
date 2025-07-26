@@ -1,0 +1,50 @@
+
+{% for thread in threads %}
+<div class="card" style="margin-bottom: 1rem; animation: slideInLeft 0.5s ease-out;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="flex: 1;">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text);">{{ thread.subject }}</h4>
+            <p style="color: var(--text-light); margin-bottom: 0.5rem;">
+                <i class="fas fa-user"></i> {{ thread.sender }}
+            </p>
+            <p style="color: var(--text-light); font-size: 0.9rem;">
+                <i class="fas fa-clock"></i> {{ thread.date }}
+            </p>
+            
+            {% if thread.has_bank_change %}
+            <div class="status-badge status-pending" style="margin-top: 1rem;">
+                <i class="fas fa-exclamation-triangle"></i>
+                Bank Details Changed
+            </div>
+            {% endif %}
+        </div>
+        
+        <div style="margin-left: 2rem;">
+            {% if thread.verified %}
+            <div class="status-badge status-verified">
+                <i class="fas fa-check-circle"></i>
+                Voice Verified
+            </div>
+            {% else %}
+            <button 
+                class="btn-primary"
+                hx-post="/verify-thread/{{ thread.id }}"
+                hx-target="#verification-modal"
+                hx-swap="innerHTML"
+                style="background: var(--warning); box-shadow: 0 4px 15px rgba(237, 137, 54, 0.3);"
+            >
+                <i class="fas fa-microphone"></i>
+                Verify Now
+            </button>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% if not threads %}
+<div style="text-align: center; padding: 2rem; color: var(--text-light);">
+    <i class="fas fa-search" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+    <p>No threads found matching your search</p>
+</div>
+{% endif %}

@@ -1,0 +1,92 @@
+
+{% extends "base.html" %}
+
+{% block title %}PayShield Dashboard - Voice-Protected Payments{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card fade-in">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div>
+                <h2 class="card-title">Gmail Thread Search</h2>
+                <p style="color: var(--text-light); margin: 0;">Find and verify suspicious payment change requests</p>
+            </div>
+        </div>
+
+        <!-- Search Box -->
+        <div style="margin-bottom: 2rem;">
+            <input 
+                type="text" 
+                placeholder="Search Gmail threads (e.g., 'invoice', 'payment', 'bank details')"
+                style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 12px; font-size: 1rem; transition: all 0.3s ease;"
+                hx-post="/search-threads"
+                hx-target="#thread-results"
+                hx-trigger="keyup changed delay:500ms"
+                name="search_query"
+            >
+        </div>
+
+        <!-- Results -->
+        <div id="thread-results" class="fade-in">
+            <div style="text-align: center; padding: 3rem; color: var(--text-light);">
+                <i class="fas fa-envelope" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                <p>Start typing to search your Gmail threads</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="features-grid" style="margin-top: 2rem;">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3 class="card-title">Enroll Vendor</h3>
+            </div>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                Register a new vendor's voice for future verification
+            </p>
+            <a href="/enroll" class="btn-primary">
+                <i class="fas fa-microphone"></i>
+                Start Enrollment
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="card-title">Verify Payment</h3>
+            </div>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                Challenge a vendor's voice for payment authorization
+            </p>
+            <a href="/verify" class="btn-primary">
+                <i class="fas fa-phone"></i>
+                Start Verification
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h3 class="card-title">Audit Trail</h3>
+            </div>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                View all verification attempts and JWT badges
+            </p>
+            <a href="/audit" class="btn-primary">
+                <i class="fas fa-list"></i>
+                View History
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

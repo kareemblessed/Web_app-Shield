@@ -1,0 +1,25 @@
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+venv/
+.env
+
+# === Secrets ===
+credentials.json
+token.json
+*.key
+*.pem
+*.env
+
+# === IDE / OS cruft ===
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# === Logs & DB ===
+*.log
+*.sqlite3

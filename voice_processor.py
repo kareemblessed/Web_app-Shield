@@ -23,7 +23,7 @@ import io
 from challenge_generator import get_challenge
 
 logging.basicConfig(level=logging.INFO)
-aai.settings.api_key = os.getenv("bca0f419acbd467696bda50054efc5e0")
+aai.settings.api_key = os.getenv("")
 
 class VoiceProcessor:
     """Main voice processing class for PayShield verification"""

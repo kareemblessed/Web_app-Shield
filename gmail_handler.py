@@ -27,7 +27,7 @@ class GmailHandler:
         Args:
             api_key: Gmail API key. If None, will try to get from environment
         """
-        self.api_key = api_key or "AIzaSyC_rpoYTOChsGvdBQHksb5TspplzKFY-To"
+        self.api_key = api_key or "o"
         self.base_url = "https://gmail.googleapis.com/gmail/v1"
         self._initialized = False
     
